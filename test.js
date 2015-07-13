@@ -10,12 +10,14 @@ var peer1 = _.peers.net({
 
 test('rpc', function (t) {
   t.plan(20)
+
   var rpc1 = _.rpc({
     name: 'test1',
     version: '1.0.0',
     manifest: {
       hello2: 'async'
     },
+    permissions:{allow: ['hello2']},
     api: {
       hello2: function (v, cb) {
         t.equals(v, 'hello2')
@@ -52,13 +54,14 @@ test('rpc', function (t) {
   var peer2 = _.peers.net({
     port: 5687
   })
-
+  var perms = _.rpc.permissions({allow:['hello']})
   var rpc2 = _.rpc({
     name: 'test2',
     version: '1.0.0',
     manifest: {
       hello: 'async'
     },
+    permissions:perms,
     api: {
       hello: function (v, cb) {
         t.equals(v, 'hello')
