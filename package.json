@@ -9,13 +9,13 @@
   "author": "Markus Wunderlin",
   "license": "MIT",
   "devDependencies": {
-    "icebreaker": "^0.6.1",
-    "icebreaker-peer-net": "^0.3.0",
+    "icebreaker": "^0.7.0",
+    "icebreaker-peer-net": "^0.3.1",
     "tape": "^4.0.0"
   },
   "dependencies": {
     "icebreaker-msgpack": "^1.1.0",
-    "muxrpc": "^5.0.1",
+    "muxrpc": "^6.0.0",
     "pull-handshake": "^1.0.2",
     "pull-pair": "^1.0.0",
     "semver": "^5.0.0",
