@@ -17,6 +17,7 @@
     "icebreaker-msgpack": "^1.1.0",
     "muxrpc": "^5.0.1",
     "pull-handshake": "^1.0.2",
+    "pull-pair": "^1.0.0",
     "semver": "^5.0.0",
     "tape": "^4.0.0"
   }
