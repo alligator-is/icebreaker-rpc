@@ -1,0 +1,11 @@
+sudo: false
+language: node_js
+node_js:
+- '0.12'
+- '0.11'
+- '0.10'
+- iojs
+env:
+  global:
+  - secure: I7lpsyxhIi2CtKLcrUSg1SdnXLXYhbK0GrOTLwxK8EmIq3jmKqMGTUtCdpKnIuKaetEGArr19d+FeDJk9KooAC3gwBasG/YK8EB6QA/CauPCLPkWNJOOGWtAmjC10NlX03tY5n1DYWVBfL4Tjk3QfjLn6p/tr7vc+YXEq6H3B7U=
+  - secure: ariRFPEhJk5wtI6zMEVX2UG9N9x+A04VGNT5L35yRNBXKTQOVsi+mMfa4hetbViFHrE/3t/v6NlXOMpyisYiq8FnAN2aklMrNPB+Ggilugp3qrVLo67pzpgvLi9Xpt4ODjD+id/roD7Mo830jwVq/M6pF9n6y9sS0UmowdpCpYM=

@@ -1,0 +1,23 @@
+{
+  "name": "icebreaker-rpc",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/.bin/tape test.js"
+  },
+  "author": "Markus Wunderlin",
+  "license": "MIT",
+  "devDependencies": {
+    "icebreaker": "^0.6.1",
+    "icebreaker-peer-net": "^0.3.0",
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "icebreaker-msgpack": "^1.1.0",
+    "muxrpc": "^5.0.1",
+    "pull-handshake": "^1.0.2",
+    "semver": "^5.0.0",
+    "tape": "^4.0.0"
+  }
+}
