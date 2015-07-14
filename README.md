@@ -61,8 +61,7 @@ http.createServer(function (req, res) {
       res.end(v);
     })
   } catch (e) {
-    console.log(e)
-    res.end(e.message)
+    res.end(e.message||e)
   }
 }).listen(1337, '127.0.0.1');
 

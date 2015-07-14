@@ -1,7 +1,7 @@
 {
   "name": "icebreaker-rpc",
   "version": "0.1.0",
-  "description": "",
+  "description": "muxrpc for icebreaker-peer implementations.",
   "main": "index.js",
   "scripts": {
     "test": "node node_modules/.bin/tape test.js"
@@ -18,7 +18,6 @@
     "muxrpc": "^6.0.0",
     "pull-handshake": "^1.0.2",
     "pull-pair": "^1.0.0",
-    "semver": "^5.0.0",
-    "tape": "^4.0.0"
+    "semver": "^5.0.0"
   }
 }
