@@ -101,21 +101,27 @@ test('no buffer attack',function(t){
   var A = _.rpc({name:'A',version:'1.0.0'})
 
   A.use(p1)
+
   var count=0
   var p2 = _.peers.net({
     port: 5687
   })
+
   function onDisconnected(){
     t.ok(Object.keys(this.connections).length===0)
     count++
     if(count ===2){ p1.stop() }
   }
+
   p1.on('disconnected',onDisconnected)
+  p1.on('stopped',function(){
+    t.end()
+  })
+
   p1.start()
 
   p2.connect(p1)
   p2.on('connection',function(c){
-    console.log('c')
     _(['test','test'],c,_.drain())
   })
   p2.on('disconnected',onDisconnected)
