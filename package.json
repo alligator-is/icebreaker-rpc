@@ -1,6 +1,6 @@
 {
   "name": "icebreaker-rpc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "muxrpc for icebreaker-peer implementations.",
   "main": "index.js",
   "scripts": {
