@@ -8,13 +8,22 @@
   },
   "author": "Markus Wunderlin",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alligator-io/icebreaker-rpc.git"
+  },
+  "keywords": [
+    "pull-stream",
+    "icebreaker",
+    "rpc"
+  ],
   "devDependencies": {
     "icebreaker": "^0.7.0",
     "icebreaker-peer-net": "^0.4.1",
     "tape": "^4.0.0"
   },
   "dependencies": {
-    "muxrpc": "^6.0.0",
+    "muxrpc": "^6.1.0",
     "pull-defer": "^0.2.0",
     "pull-handshake": "^1.0.2",
     "pull-pair": "^1.0.0",
