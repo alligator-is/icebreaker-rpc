@@ -3,88 +3,56 @@ icebreaker-rpc
 [muxrpc](https://github.com/ssbc/muxrpc) for [icebreaker-peer](https://github.com/alligator-io/icebreaker-peer) implementations.
 
 [![Build Status](https://travis-ci.org/alligator-io/icebreaker-rpc.svg?branch=master)](https://travis-ci.org/alligator-io/icebreaker-rpc)
-## Prerequisites
-```bash
-npm install --save icebreaker
-```
 ## Install
 ```bash
 npm install --save icebreaker-rpc
 ```
 
 ## Example
+
 ```javascript
-var _ = require('icebreaker')
-require('icebreaker-peer-net')
-require('icebreaker-agent-udp')
-require('icebreaker-rpc')
-var c = 1
+const { Server, Connect, Async, Sync, AsyncPromise, Source, Sink, Local, KeyPair, _ } = require('./')
 
-var rpc = _.rpc({
-  name: 'test',
-  version: '1.0.0',
-  manifest: {
-    hello: 'async'
-  },
-  api: {
-    hello: function (v, cb) {
-      cb(null, v + ' world' + (c++))
-    }
-  }
+const alice = KeyPair.generate()
+const bob = KeyPair.generate()
+
+const api = Local()
+
+api.helloAsync = Async((text, cb) => { cb(false, text + " world") }, "string")
+
+api.helloPromise = AsyncPromise((text) => {
+  return new Promise((resolve, reject) => { resolve(text + ' world') }, "string")
 })
 
-var peer = _.peers.net({
-  port: 8988
-})
+api.helloSink = Sink((cb) => { return _.drain((item) => { console.log("hello " + item) }, cb) })
 
-rpc.use(peer)
+// create Server
 
-peer.start()
+let server = Server(api, { keys: alice, appKey: "icebreaker@example" })
+server.listen('shs+tcp://127.0.0.1:8080')
 
-_.agents.udp({
-  peers: [peer],
-  port: 8886,
-  loopback: true
-}).start()
+_(
+  server,
+  server.on({
+    ready: (e) => {
+      // create client connection
+      Connect(e.address[0], null, { keys: bob, appKey: "icebreaker@example" }, (err, connection) => {
+        console.log("hallo", connection)
+        connection.peer.helloAsync("hello", (err, data) => {
+          console.log(err, data) 
+          connection.peer.helloPromise("hello").then((data) => {
+            console.log(data)
+            _("sink", api.helloSink(function () {
+              server.end()
+             }))
+          })
+        })
+      })
+    }, 
+    end: () => { console.log("end") }
+  }))
 
-
-var http = require('http');
-
-http.createServer(function (req, res) {
-  try {
-    var rpc = rpc2.get({
-      name: 'test',
-      version: '1.0.0'
-    })
-    rpc.api.hello('hello', function (err, v) {
-      if (err) return res.end(err.message || err)
-      res.end(v);
-    })
-  } catch (e) {
-    res.end(e.message||e)
-  }
-}).listen(1337, '127.0.0.1');
-
-console.log('http://127.0.0.1:1337')
-
-var rpc2 = _.rpc({
-  name: 'httpServer',
-  version: '1.0.0'
-})
-
-var peer2 = _.peers.net({
-  port: 8989
-})
-
-rpc2.use(peer2)
-
-peer2.start()
-
-_.agents.udp({
-  peers: [peer2],
-  port: 8886,
-  loopback: true
-}).start()
 ```
+
 ## License
 MIT
