@@ -1,7 +1,15 @@
-var _ = require('icebreaker')
+module.exports.Local = require('./lib/local')
+module.exports.Sync = require('./lib/sync')
+module.exports.Async = require("./lib/async")
+module.exports.AsyncPromise = require("./lib/promise")
+module.exports.Source = require("./lib/source")
+module.exports.Sink = require("./lib/sink")
+module.exports.Duplex = require("./lib/duplex")
+module.exports.RPC=require('./lib/rpc')
+module.exports.Server=require('./lib/server')
+module.exports.Connect=require('./lib/connect')
+module.exports.Peer=require('./lib/peer')
+module.exports.KeyPair = require('./lib/keypair') 
+module.exports._ = require('icebreaker') 
 
-_.mixin({
-  rpc: require('./lib/rpc')
-})
 
-_.mixin({permissions:require('muxrpc/permissions')},_.rpc)
