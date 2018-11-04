@@ -9,7 +9,8 @@ module.exports.RPC=require('./lib/rpc')
 module.exports.Server=require('./lib/server')
 module.exports.Connect=require('./lib/connect')
 module.exports.Peer=require('./lib/peer')
-module.exports.KeyPair = require('./lib/keypair') 
+module.exports.KeyPair = require('./lib/keypair')
+module.exports.Permissions = require('muxrpc/permissions')
 module.exports._ = require('icebreaker') 
 
 
