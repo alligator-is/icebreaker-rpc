@@ -8,6 +8,11 @@
   },
   "author": "Markus Wunderlin",
   "license": "MIT",
+  "homepage": "https://github.com/alligator-io/icebreaker-rpc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alligator-io/icebreaker-rpc.git"
+  },
   "dependencies": {
     "assign-deep": "^1.0.0",
     "icebreaker": "^2.0.3",
