@@ -1,6 +1,6 @@
 {
   "name": "icebreaker-rpc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "assign-deep": "^1.0.0",
     "icebreaker": "^2.0.3",
     "icebreaker-network": "^0.8.0",
-    "icebreaker-peer": "3.0.7",
+    "icebreaker-peer": "3.0.8",
     "is-promise": "^2.1.0",
     "ms": "^2.1.1",
     "muxrpc": "^6.4.1",
