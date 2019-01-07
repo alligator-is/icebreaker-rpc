@@ -19,7 +19,7 @@ test('Server tcp', function (t) {
 
     _(server,server.on({
         ready:(e)=> {
-            let conn = Connect(e.address[0],null,{keys:bob,appKey:"alligator"},function(err,connection){
+            Connect(e.address[0],null,{keys:bob,appKey:"alligator"},function(err,connection){
                 connection.peer.test((err,data)=>{
                     t.notOk(err)
                     t.equals(data,true)
