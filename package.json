@@ -1,6 +1,6 @@
 {
   "name": "icebreaker-rpc",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "RPC API based on icebreaker-peer and muxrpc",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "muxrpc": "^6.4.2",
     "promise-to-callback": "^1.0.0",
     "pull-handshake": "^1.1.4",
-    "superstruct": "^0.6.0",
+    "superstruct": "^0.6.1",
     "traverse": "^0.6.6"
   },
   "devDependencies": {
