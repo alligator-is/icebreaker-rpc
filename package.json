@@ -1,6 +1,6 @@
 {
   "name": "icebreaker-rpc",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "RPC API based on icebreaker-peer and muxrpc",
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,13 @@
     "url": "https://github.com/alligator-io/icebreaker-rpc.git"
   },
   "dependencies": {
-    "assign-deep": "^1.0.0",
+    "assign-deep": "^1.0.1",
     "icebreaker": "^2.0.3",
-    "icebreaker-network": "^1.0.3",
-    "icebreaker-peer": "^3.0.17",
-    "is-promise": "^2.1.0",
+    "icebreaker-network": "^1.0.5",
+    "icebreaker-peer": "^3.0.19",
+    "is-promise": "^4.0.0",
     "ms": "^2.1.1",
-    "muxrpc": "^6.4.2",
+    "muxrpc": "^6.5.0",
     "promise-to-callback": "^1.0.0",
     "pull-handshake": "^1.1.4",
     "superstruct": "^0.6.1",
