@@ -7,9 +7,14 @@ module.exports.Sink = require("./lib/sink")
 module.exports.Duplex = require("./lib/duplex")
 module.exports.Action = require("./lib/action")
 module.exports.RPC=require('./lib/rpc')
+
+var isBrowser = require('is-in-browser').default;
+if(!isBrowser){
 module.exports.Server=require('./lib/server')
-module.exports.Connect=require('./lib/connect')
 module.exports.Peer=require('./lib/peer')
+}
+
+module.exports.Connect=require('./lib/connect')
 module.exports.KeyPair = require('./lib/keypair')
 module.exports.Permissions = require('muxrpc/permissions')
 module.exports._ = require('icebreaker') 
