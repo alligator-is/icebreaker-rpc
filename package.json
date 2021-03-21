@@ -1,6 +1,6 @@
 {
   "name": "icebreaker-rpc",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "RPC API based on icebreaker-peer and muxrpc",
   "main": "index.js",
   "scripts": {
